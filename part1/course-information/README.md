@@ -1,16 +1,65 @@
-# React + Vite
+# Course Information
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application developed as part of the Full Stack Open curriculum. The project focuses on the core principles of component-based architecture and unidirectional data flow.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application displays details about a specific development course, including the course name, various modules (parts), and the total count of exercises. The project evolved from simple variables into a single, complex JavaScript object passed through nested components.
 
-## React Compiler
+## Technical Implementations
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The final version of this project (Step 5) implements the following:
 
-## Expanding the ESLint configuration
+### 1. Component Architecture
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **Header**: Renders the course name.
+* **Content**: Orchestrates the rendering of specific course parts.
+* **Part**: A reusable component for individual module details.
+* **Footer**: Calculates and displays the aggregate number of exercises.
+
+### 2. Data Structure
+
+The application utilizes a nested data model to manage information:
+
+* **Object-Oriented**: Data is encapsulated within a single `course` object.
+* **Arrays**: Course modules are stored in an array of objects to facilitate future scalability.
+
+### 3. Props Management
+
+* **Prop Drilling**: Demonstrates passing data from the root `App` component down to deeply nested `Part` components.
+* **Object Destructuring**: Accessing nested properties via dot notation (e.g., `props.course.parts[0].exercises`).
+
+## Getting Started
+
+### Prerequisites
+
+* Node.js (LTS version recommended)
+* npm or yarn
+
+### Installation
+
+1. Clone the repository or navigate to the project folder.
+2. Install the necessary dependencies:
+```bash
+npm install
+
+```
+
+
+
+### Development
+
+To run the application in development mode with Hot Module Replacement (HMR):
+
+```bash
+npm run dev
+
+```
+
+The application will be accessible at `http://localhost:5173` by default.
+
+## Progress Summary
+
+* **Exercises 1.1 - 1.2**: Established component nesting.
+* **Exercises 1.3 - 1.4**: Transitioned from individual variables to arrays of objects.
+* **Exercise 1.5**: Refactored the entire state into a single unified object.
